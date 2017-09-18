@@ -1,6 +1,7 @@
 $(document).ready(function() {
   $('.new-tweet').on('keypress', function() {
-    var count = +($(this).find('.counter').text());
-    alert(count);
+    let count = +($(this).find('.counter').text());
+    let diff = $(this).find('textarea').val().length;
+
   });
 });
