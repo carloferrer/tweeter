@@ -1,7 +1,8 @@
 $(document).ready(function() {
-  $('.new-tweet').on('keypress', function() {
-    let count = +($(this).find('.counter').text());
-    let diff = $(this).find('textarea').val().length;
+  $('.new-tweet').on('keyup', function() {
+    // let count = +($('.counter').text());
+    let diff = $('textarea').val().length;
 
+    $('.counter').text(140 - diff);
   });
 });
