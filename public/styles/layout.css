@@ -25,3 +25,15 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+main {
+  position: relative;
+  top: 80px;
+  z-index: -1;
+
+  background-color: white;
+
+  margin: 0 auto;
+
+  width: 450px;
+}
