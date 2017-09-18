@@ -11,6 +11,8 @@
 
   background: #00a087;
   color: #e8fdff;
+
+  z-index: 1;
 }
 
 #nav-bar .logo {

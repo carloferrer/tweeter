@@ -44,18 +44,30 @@ main.container {
 
 .new-tweet {
   position: relative;
+
   top: 2em;
   margin-left: 2em;
   margin-right: 2em;
+
   padding-left: 0.5em;
   padding-right: 0.5em;
-  background-color: #eee;
 
+  height: 130px;
+
+  background-color: #eee;
+}
+
+.new-tweet > h2 {
+  position: relative;
+  top: 0.25em;
+  border-bottom: solid black;
 }
 
 .new-tweet textarea {
   position: relative;
-
   width: 100%;
+}
+
+.new-tweet .counter {
 
 }
