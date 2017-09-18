@@ -26,10 +26,6 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-/*html, body {
-  height: 100%;
-}*/
-
 main.container {
   position: relative;
   top: 60px;
@@ -40,34 +36,4 @@ main.container {
 
   width: 450px;
   height: 200px;
-}
-
-.new-tweet {
-  position: relative;
-
-  top: 2em;
-  margin-left: 2em;
-  margin-right: 2em;
-
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-
-  height: 130px;
-
-  background-color: #eee;
-}
-
-.new-tweet > h2 {
-  position: relative;
-  top: 0.25em;
-  border-bottom: solid black;
-}
-
-.new-tweet textarea {
-  position: relative;
-  width: 100%;
-}
-
-.new-tweet .counter {
-
 }
