@@ -11,3 +11,20 @@
   background: #00a087;
   color: #e8fdff;
 }
+
+#nav-bar .logo {
+  width: 80px;
+  height: 80px ;
+}
+
+#nav-bar .header {
+  /*The link below helped with centering the header vertically.*/
+  /*https://css-tricks.com/centering-css-complete-guide/*/
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  padding-left: 10px;
+
+  font-size: 200%;
+}
