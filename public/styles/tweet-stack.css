@@ -17,6 +17,11 @@
   overflow-x: hidden;
 }
 
+.tweet-box:hover {
+  filter: saturate(250%);
+  border: solid #bbb;
+}
+
 .tweet-box header {
   background-color: #f3f3f3;
 
