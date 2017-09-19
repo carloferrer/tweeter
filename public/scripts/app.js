@@ -49,7 +49,7 @@ $(document).ready(function() {
         "handle": "@johann49"
       },
       "content": {
-        "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
+        "text": "Es ist nichts schrecklicher als  tätige Unwissenheit."
       },
       "created_at": 1461113796368
     }
@@ -61,10 +61,10 @@ $(document).ready(function() {
   function formSubmission() {
     $('.container')
     .find('.new-tweet')
-    .find('input')
-    .on('click', function(event) {
+    .find('form')
+    .on('submit', function(event) {
       event.preventDefault();
-      alert('Prevented default!');
+      console.log($(this).serialize());
     });
   }
 
