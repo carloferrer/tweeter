@@ -16,6 +16,7 @@
 
   margin-bottom: 2em;
 
+  overflow-wrap: normal;
   overflow-x: hidden;
 }
 
@@ -49,7 +50,7 @@
 
   color: #5f7e86;
 
-  top: -70px;
+  bottom: 75px;
   left: 70px;
 }
 
@@ -58,8 +59,8 @@
 
   color: #888;
 
-  top: -115px;
-  left: 315px;
+  bottom: 95px;
+  left: 70px;
 }
 
 .tweet-box div {
