@@ -1,16 +1,17 @@
 #tweet-stack {
   position: relative;
-  background-color: tomato;
   top: 5em;
 
   margin-left: 2em;
   margin-right: 2em;
+}
 
-  /*padding-top: 0.5em;
-  padding-left: 0.5em;
-  padding-right: 0.5em;*/
+.tweet-box {
+  border: solid #ddd;
 
+  background-color: tomato;
 
+  height: 200px;
 }
 
 .tweet-box header {
@@ -42,5 +43,17 @@
 }
 
 .tweet-box .tweet {
+    /*The link below helped with centering the header vertically.*/
+  /*https://css-tricks.com/centering-css-complete-guide/*/
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.tweet-box footer {
+  position: absolute;
+  bottom: 0;
 }
