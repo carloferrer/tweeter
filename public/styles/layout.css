@@ -15,7 +15,6 @@ html {
  */
 
 body {
-  margin: 0;
   color: #244751;
   background-color: #eee;
 
@@ -40,5 +39,6 @@ main.container {
   margin: 0 auto;
 
   width: 450px;
-  /*height: 900px; Careful; the white background cuts off after 9000px.*/
+
+  padding-bottom: 2em;
 }
