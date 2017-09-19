@@ -28,18 +28,22 @@ $(document).ready(function() {
     .find('.new-tweet')
     .find('form')
     .on('submit', function(event) {
-      event.preventDefault();
-      console.log($(this).serialize());
-      // loadTweets($(this).serialize());
+      if (){
+
+      } else if () {
+
+      } else {
+        event.preventDefault();
+        console.log($(this).serialize());
+        // loadTweets($(this).serialize());
+      }
     });
-    return;
   }
 
   function renderTweets(data) {
     for (let i = 0; i < data.length; i++) {
       $('#tweet-stack').append(createTweetElement(data[[i]]));
     }
-    return;
   }
 
   function createTweetElement(tweetData) {
