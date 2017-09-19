@@ -7,17 +7,22 @@
 }
 
 .tweet-box {
-  border: solid #ddd;
-
-  background-color: tomato;
+  background-color: white;
 
   height: 200px;
+
+  border: solid #ddd;
+  border-radius: 5px;
+
+  overflow-x: hidden;
 }
 
 .tweet-box header {
-  background-color: #eee;
+  background-color: #f3f3f3;
 
   height: 70px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .tweet-box img {
@@ -28,32 +33,55 @@
 
   width: 50px;
   height: 50px;
+
+  border-radius: 5px;
 }
 
 .tweet-box h2 {
   position: absolute;
+
+  color: #5f7e86;
+
   top: -10px;
   left: 70px;
 }
 
-.tweet-box .username {
+.tweet-box .handle {
   position: absolute;
-  top: 10px;
+
+  color: #888;
+
+  top: 15px;
   right: 10px;
 }
 
-.tweet-box .tweet {
+.tweet-box .content {
     /*The link below helped with centering the header vertically.*/
   /*https://css-tricks.com/centering-css-complete-guide/*/
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+  margin-left: 10px;
+  margin-right: 10px;
+
   width: 100%;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .tweet-box footer {
   position: absolute;
   bottom: 0;
+
+  font-size: 75%;
+
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 10px;
+
+  width: 100%;
+  border-top: solid #eee;
 }

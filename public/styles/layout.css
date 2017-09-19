@@ -27,7 +27,8 @@ body {
  */
 
 body {
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: auto;
 }
 
 main.container {
@@ -39,5 +40,5 @@ main.container {
   margin: 0 auto;
 
   width: 450px;
-  height: 9000px; /*Careful; the white background cuts off after 9000px.*/
+  height: auto; /*Careful; the white background cuts off after 9000px.*/
 }
