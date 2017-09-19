@@ -4,8 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
-
 $(document).ready(function() {
 
   formSubmission();
@@ -16,16 +14,12 @@ $(document).ready(function() {
       url: 'http://localhost:8080/tweets',
       method: 'GET',
       success: function (firstTweets) {
-        // $('#tweet-stack').replaceWith(firstTweets);
         renderTweets(firstTweets);
-        // console.log(firstTweets);
       }
     });
   }
 
   function formSubmission() {
-
-
     $('.container')
     .find('.new-tweet')
     .find('form')
@@ -39,7 +33,18 @@ $(document).ready(function() {
       } else if (charCount < 0) {
         alert(`You tweet must be less than 140 characters!  Your current tweet must be at least ${-charCount} characters less!`);
       } else {
+        $.ajax({
+          url: 'http://localhost:8080/tweets/',
+          // ${$('textarea').serialize()}`,
+          // url: 'http://localhost:8080/tweets',
+          method: 'POST',
+          success: function (newTweet) {
 
+            console.log(newTweet);
+
+            // renderTweets(newTweet);
+          }
+        });
       }
     });
   }
