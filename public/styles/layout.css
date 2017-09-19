@@ -39,5 +39,5 @@ main.container {
   margin: 0 auto;
 
   width: 450px;
-  height: 800px;
+  height: 9000px; /*Careful; the white background cuts off after 9000px.*/
 }
