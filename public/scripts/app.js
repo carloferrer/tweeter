@@ -56,6 +56,17 @@ $(document).ready(function() {
   ];
 
   renderTweets(data);
+  formSubmission();
+
+  function formSubmission() {
+    $('.container')
+    .find('.new-tweet')
+    .find('input')
+    .on('click', function(event) {
+      event.preventDefault();
+      alert('Prevented default!');
+    });
+  }
 
   function renderTweets(data) {
     for (let i = 0; i < data.length; i++) {
@@ -84,7 +95,3 @@ $(document).ready(function() {
     return $newTweet;
   }
 });
-
-// Test / driver code (temporary)
-// console.log(tweet); // to see what it looks like
-// $('#tweet-stack').append(tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
