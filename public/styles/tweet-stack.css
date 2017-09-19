@@ -14,7 +14,7 @@
   border: solid #ddd;
   border-radius: 5px;
 
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 
   overflow-x: hidden;
 }
@@ -60,6 +60,10 @@
 
   top: -115px;
   left: 315px;
+}
+
+.tweet-box div {
+  height: 55px;
 }
 
 .tweet-box .content {

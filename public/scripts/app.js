@@ -28,11 +28,19 @@ $(document).ready(function() {
     let $newTweet = $('<article>').addClass('tweet-box');
     $newTweet
       .append('<header></header>')
+      // .append('<span class="content"></span>')
+      .append('<div></div>')
       .append('<footer></footer>');
     $newTweet.find('header')
       .append('<img src='+tweetData.user.avatars.small+'>')
       .append('<h2>'+tweetData.user.name+'</h2>')
       .append('<span class="handle">'+tweetData.user.handle+'</span>');
+    // $newTweet.find('.content')
+    $newTweet.find('div')
+      .append('<span class="content">'+tweetData.content.text+'</span>');
+    $newTweet.find('footer')
+      .append('<span class="timestamp">'+tweetData.created_at+'</span>');
+
     return $newTweet;
   }
   $('#tweet-stack').append(createTweetElement(tweetData));

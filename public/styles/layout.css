@@ -40,5 +40,5 @@ main.container {
   margin: 0 auto;
 
   width: 450px;
-  height: auto; /*Careful; the white background cuts off after 9000px.*/
+  height: 900px; /*Careful; the white background cuts off after 9000px.*/
 }
