@@ -26,6 +26,10 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+body {
+  overflow: hidden;
+}
+
 main.container {
   position: relative;
   top: 60px;
@@ -35,5 +39,5 @@ main.container {
   margin: 0 auto;
 
   width: 450px;
-  height: 200px;
+  height: 800px;
 }

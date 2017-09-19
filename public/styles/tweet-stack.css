@@ -1,0 +1,12 @@
+#tweet-stack {
+  position: relative;
+  background-color:black;
+  top: 5em;
+
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.tweet-box > header{
+  background-color: #eee;
+}
