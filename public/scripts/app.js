@@ -24,12 +24,23 @@ $(document).ready(function() {
   }
 
   function formSubmission() {
+
+
     $('.container')
     .find('.new-tweet')
     .find('form')
     .on('submit', function(event) {
       event.preventDefault();
-      alert($('.counter').text());
+
+      let charCount = +$('.counter').text();
+
+      if (charCount === 140) {
+        alert("You can't tweet nothing!  Compose a tweet from 1 to 140 characters.");
+      } else if (charCount < 0) {
+        alert(`You tweet must be less than 140 characters!  Your current tweet must be at least ${-charCount} characters less!`);
+      } else {
+
+      }
     });
   }
 
