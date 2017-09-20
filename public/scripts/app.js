@@ -10,9 +10,15 @@ $(document).ready(function() {
   loadTweets();
 
   function loadTweets() {
-    $.ajax({
+    // $.ajax({
+    //   url: 'http://localhost:8080/tweets',
+    //   method: 'GET',
+    //   success: function (firstTweets) {
+    //     renderTweets(firstTweets);
+    //   }
+    // });
+    $.get({
       url: 'http://localhost:8080/tweets',
-      method: 'GET',
       success: function (firstTweets) {
         renderTweets(firstTweets);
       }
@@ -25,9 +31,12 @@ $(document).ready(function() {
           data: $('textarea').serialize(),
           method: 'POST',
           success: function () {
+            alert($('textarea').serialize());
+            alert('Hello.');
+            // console.log($('textarea').serialize());
             // $('#tweet-stack').append(createTweetElement(newTweet));
             // createTweetElement(newTweet);
-            alert($('textarea').serialize());
+            // console.log(response);
           }
         });
   }
