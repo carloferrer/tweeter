@@ -83,8 +83,15 @@ $(document).ready(function() {
     $newTweet.find('div')
       .append('<span class="content">'+tweetData.content.text+'</span>');
     $newTweet.find('footer')
-      .append('<span class="timestamp">'+tweetData.created_at+'</span>');
+      .append('<span class="timestamp">'+convertTime(tweetData.created_at)+'</span>');
 
     return $newTweet;
   }
 });
+
+function convertTime(longNum) {
+  // https://stackoverflow.com/questions/4611754/javascript-convert-seconds-to-a-date-object
+  let shortNum = new Date(1970, 0, 1);
+  shortNum.setSeconds(1 + (longNum / 1000));
+  return  shortNum;
+}
