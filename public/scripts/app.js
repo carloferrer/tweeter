@@ -10,14 +10,6 @@ $(document).ready(function() {
   loadTweets();
 
   function loadTweets() {
-    // $.get('http://localhost:8080/tweets', function(tweets) {
-    //   $('#tweet-stack').empty();
-
-    //   for (let i = 0; i < tweets.length; i++) {
-    //     $('#tweet-stack')
-    //       .append(createTweetElement(tweets[[i]]));
-    //   }
-    // });
     $.get('http://localhost:8080/tweets')
     .done(function(result) {
       $('#tweet-stack').empty();
@@ -57,6 +49,7 @@ $(document).ready(function() {
         alert(`You tweet must be less than 140 characters!  Your current tweet must be at least ${-charCount} characters less!`);
       } else {
         let newTweet = $('textarea').serialize();
+        $('textarea').val('');
         postTweet(newTweet);
       }
     });
