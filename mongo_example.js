@@ -16,12 +16,16 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
 
   // i.e., This is an "entry point" for a database-connected application!
 
-  db.collection('tweets').find({}, (err, result) => {
+  db.collection('tweets').find({}, (err, results) => {
     // Lazy error handling...
     if (err) throw err;
 
-    console.log(`find result: ${result}`);
-    console.log(`type of find result: ${typeof result}`);
+    // console.log(`find result: ${result}`);
+    // console.log(`type of find result: ${typeof result}`);
+
+    // Iterate on the cursor to get results one at a time...
+    console.log('for each item yielded by the cursor:');
+    results.each((err, item) => console.log(' ', item));
 
     // This is the end of the program, I think...
     db.close();
