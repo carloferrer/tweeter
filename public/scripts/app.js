@@ -8,6 +8,15 @@ $(document).ready(function() {
 
   formSubmission();
   loadTweets();
+  composeToggle();
+
+  function composeToggle() {
+    $('#nav-bar')
+    .find('input')
+    .on('click', function() {
+      $('.new-tweet').slideToggle();
+    });
+  }
 
   function loadTweets() {
     $.get('http://localhost:8080/tweets')
