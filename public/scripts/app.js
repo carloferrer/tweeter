@@ -22,7 +22,7 @@ $(document).ready(function() {
     .done(function(result) {
       $('#tweet-stack').empty();
 
-      for (let tweet of result) {
+      for (let tweet of result.reverse()) {
         $('#tweet-stack')
           .append(createTweetElement(tweet));
       }
