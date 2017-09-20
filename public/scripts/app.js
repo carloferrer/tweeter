@@ -14,14 +14,13 @@ $(document).ready(function() {
     $('#nav-bar')
     .find('input')
     .on('click', function() {
-      if ($('textarea').type === 'focusin') {
+      if($('.new-tweet').is(':visible')) {
         $('textarea').blur();
-      }
-      else {
+        $('.new-tweet').slideToggle();
+      } else {
+        $('.new-tweet').slideToggle();
         $('textarea').focus();
       }
-
-      $('.new-tweet').slideToggle();
     });
   }
 
