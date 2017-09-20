@@ -31,3 +31,33 @@
 
   font-size: 200%;
 }
+
+#nav-bar input {
+  /*The link below helped with centering the header vertically.*/
+  /*https://css-tricks.com/centering-css-complete-guide/*/
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  right: 2em;
+
+  height: 60px;
+  width: 100px;
+
+  font-size: 125%;
+  color: #219986;
+
+  background-color: #E7FDFF;
+
+  border-radius: 5px;
+  border: solid #000;
+}
+
+#nav-bar input:hover {
+  filter: contrast(150%);
+  cursor: pointer
+}
+
+#nav-bar input:focus {
+  outline: none;
+}

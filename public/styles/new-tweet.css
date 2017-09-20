@@ -39,3 +39,7 @@
   right: 0em;
   bottom: 0;
 }
+
+.new-tweet input:hover {
+  cursor: pointer;
+}
