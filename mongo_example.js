@@ -16,7 +16,7 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
 
   // i.e., This is an "entry point" for a database-connected application!
 
-  db.collection('tweets').find({}, (err, results) => {
+  db.collection('tweets').find().toArray((err, results) => {
     // Lazy error handling...
     if (err) throw err;
 
@@ -28,11 +28,13 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
     // results.each((err, item) => console.log(' ', item));
 
     // The following "slurps" the items into an array...
-    results.toArray((err, resultsArray) => {
-      if (err) throw err;
+    // results.toArray((err, resultsArray) => {
+    //   if (err) throw err;
 
-      console.log(`results.toArray: ${resultsArray}`);
-    });
+      // console.log(`results.toArray: ${resultsArray}`);
+    // });
+
+    console.log(`results array: ${results}`);
 
     // This is the end of the program, I think...
     db.close();
