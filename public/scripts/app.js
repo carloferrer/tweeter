@@ -10,13 +10,6 @@ $(document).ready(function() {
   loadTweets();
 
   function loadTweets() {
-    // $.ajax({
-    //   url: 'http://localhost:8080/tweets',
-    //   method: 'GET',
-    //   success: function (firstTweets) {
-    //     renderTweets(firstTweets);
-    //   }
-    // });
     $.get({
       url: 'http://localhost:8080/tweets',
       success: function (firstTweets) {
@@ -26,19 +19,18 @@ $(document).ready(function() {
   }
 
   function postTweet() {
-    $.ajax({
-          url: 'http://localhost:8080/tweets/',
-          data: $('textarea').serialize(),
-          method: 'POST',
-          success: function () {
-            alert($('textarea').serialize());
-            alert('Hello.');
-            // console.log($('textarea').serialize());
-            // $('#tweet-stack').append(createTweetElement(newTweet));
-            // createTweetElement(newTweet);
-            // console.log(response);
-          }
-        });
+    $.post({
+      url: 'http://localhost:8080/tweets/',
+      data: $('textarea').serialize(),
+      method: 'POST',
+      success: function () {
+        alert($('textarea').serialize());
+        // console.log($('textarea').serialize());
+        // $('#tweet-stack').append(createTweetElement(newTweet));
+        // createTweetElement(newTweet);
+        // console.log(response);
+      }
+    });
   }
 
   function formSubmission() {
