@@ -10,25 +10,35 @@ $(document).ready(function() {
   loadTweets();
 
   function loadTweets() {
-    $.get({
-      url: 'http://localhost:8080/tweets',
-      success: function (firstTweets) {
-        renderTweets(firstTweets);
+    // $.get('http://localhost:8080/tweets', function(tweets) {
+    //   $('#tweet-stack').empty();
+
+    //   for (let i = 0; i < tweets.length; i++) {
+    //     $('#tweet-stack')
+    //       .append(createTweetElement(tweets[[i]]));
+    //   }
+    // });
+    $.get('http://localhost:8080/tweets')
+    .done(function(result) {
+      $('#tweet-stack').empty();
+
+      for (let tweet of result) {
+        $('#tweet-stack')
+          .append(createTweetElement(tweet));
       }
+    })
+    .fail(function(error) {
+      console.error(error);
     });
   }
 
-  function postTweet() {
-    $.post({
-      url: 'http://localhost:8080/tweets/',
-      data: $('textarea').serialize(),
-      success: function () {
-        alert($('textarea').serialize());
-        // console.log($('textarea').serialize());
-        // $('#tweet-stack').append(createTweetElement(newTweet));
-        // createTweetElement(newTweet);
-        // console.log(response);
-      }
+  function postTweet(newTweet) {
+    $.post('http://localhost:8080/tweets/', newTweet)
+    .done(function(result) {
+      loadTweets();
+    })
+    .fail(function(error) {
+      console.error(error);
     });
   }
 
@@ -46,15 +56,10 @@ $(document).ready(function() {
       } else if (charCount < 0) {
         alert(`You tweet must be less than 140 characters!  Your current tweet must be at least ${-charCount} characters less!`);
       } else {
-        postTweet();
+        let newTweet = $('textarea').serialize();
+        postTweet(newTweet);
       }
     });
-  }
-
-  function renderTweets(data) {
-    for (let i = 0; i < data.length; i++) {
-      $('#tweet-stack').append(createTweetElement(data[[i]]));
-    }
   }
 
   function createTweetElement(tweetData) {
