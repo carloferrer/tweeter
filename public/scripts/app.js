@@ -19,6 +19,19 @@ $(document).ready(function() {
     });
   }
 
+  function postTweet() {
+    $.ajax({
+          url: 'http://localhost:8080/tweets/',
+          data: $('textarea').serialize(),
+          method: 'POST',
+          success: function () {
+            // $('#tweet-stack').append(createTweetElement(newTweet));
+            // createTweetElement(newTweet);
+            alert($('textarea').serialize());
+          }
+        });
+  }
+
   function formSubmission() {
     $('.container')
     .find('.new-tweet')
@@ -33,18 +46,7 @@ $(document).ready(function() {
       } else if (charCount < 0) {
         alert(`You tweet must be less than 140 characters!  Your current tweet must be at least ${-charCount} characters less!`);
       } else {
-        $.ajax({
-          url: 'http://localhost:8080/tweets/',
-          // ${$('textarea').serialize()}`,
-          // url: 'http://localhost:8080/tweets',
-          method: 'POST',
-          success: function (newTweet) {
-
-            console.log(newTweet);
-
-            // renderTweets(newTweet);
-          }
-        });
+        postTweet();
       }
     });
   }
