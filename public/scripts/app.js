@@ -22,7 +22,6 @@ $(document).ready(function() {
     $.post({
       url: 'http://localhost:8080/tweets/',
       data: $('textarea').serialize(),
-      method: 'POST',
       success: function () {
         alert($('textarea').serialize());
         // console.log($('textarea').serialize());
