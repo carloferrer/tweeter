@@ -16,6 +16,17 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
 
   // i.e., This is an "entry point" for a database-connected application!
 
+  db.collection('tweets').find({}, (err, result) => {
+    // Lazy error handling...
+    if (err) throw err;
+
+    console.log(`find result: ${result}`);
+    console.log(`type of find result: ${typeof result}`);
+
+    // This is the end of the program, I think...
+    db.close();
+  });
+
   // At the end, we close the connection...
-  db.close();
+  // db.close();
 });
