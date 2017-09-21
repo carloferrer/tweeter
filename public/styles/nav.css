@@ -1,5 +1,4 @@
 #nav-bar {
-  /*"position: fixed;" allows for the nav-bar to remain at the same position on screen at all times, regardless of where in the page the user has scrolled to.*/
   position: fixed;
   top: 0;
   left: 0;
