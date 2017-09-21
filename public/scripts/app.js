@@ -4,6 +4,7 @@ $(document).ready(function() {
   loadTweets();
   composeToggle();
 
+  // Toggles the tweet composition interface by clicking the 'compose' button in the nav-bar.
   function composeToggle() {
     $('#nav-bar')
     .find('input')
@@ -18,6 +19,7 @@ $(document).ready(function() {
     });
   }
 
+  // Gets tweets from database and presents them in browser.
   function loadTweets() {
     $.get('http://localhost:8080/tweets')
     .done(function(result) {
@@ -33,6 +35,7 @@ $(document).ready(function() {
     });
   }
 
+  // Handles the generation of new tweets, and presents them in browser via calling loadTweets().
   function postTweet(newTweet) {
     $.post('http://localhost:8080/tweets/', newTweet)
     .done(function(result) {
@@ -43,6 +46,7 @@ $(document).ready(function() {
     });
   }
 
+  // Ensures that new tweets follow the rule of being between 1 and 140 characters (inclusive).
   function formSubmission() {
     $('.container')
     .find('.new-tweet')
@@ -64,6 +68,7 @@ $(document).ready(function() {
     });
   }
 
+  // Visually formats new tweets.
   function createTweetElement(tweetData) {
     let $newTweet = $('<article>').addClass('tweet-box');
     $newTweet
@@ -82,33 +87,33 @@ $(document).ready(function() {
 
     return $newTweet;
   }
+
+  // Returns how long ago a tweet was tweeted.
+  function timeSince(date) {
+  //https://stackoverflow.com/questions/3177836/how-to-format-time-since-xxx-e-g-4-minutes-ago-similar-to-stack-exchange-site
+    var seconds = Math.floor((new Date() - date) / 1000);
+
+    var interval = Math.floor(seconds / 31536000);
+
+    if (interval >= 1) {
+      return interval + " year(s)";
+    }
+    interval = Math.floor(seconds / 2628000);
+    if (interval >= 1) {
+      return interval + " month(s)";
+    }
+    interval = Math.floor(seconds / 86400);
+    if (interval >= 1) {
+      return interval + " day(s)";
+    }
+    interval = Math.floor(seconds / 3600);
+    if (interval >= 1) {
+      return interval + " hour(s)";
+    }
+    interval = Math.floor(seconds / 60);
+    if (interval >= 1) {
+      return interval + " minute(s)";
+    }
+    return Math.floor(seconds) + " second(s)";
+  }
 });
-
-
-function timeSince(date) {
-//https://stackoverflow.com/questions/3177836/how-to-format-time-since-xxx-e-g-4-minutes-ago-similar-to-stack-exchange-site
-  var seconds = Math.floor((new Date() - date) / 1000);
-
-  var interval = Math.floor(seconds / 31536000);
-
-  if (interval >= 1) {
-    return interval + " year(s)";
-  }
-  interval = Math.floor(seconds / 2628000);
-  if (interval >= 1) {
-    return interval + " month(s)";
-  }
-  interval = Math.floor(seconds / 86400);
-  if (interval >= 1) {
-    return interval + " day(s)";
-  }
-  interval = Math.floor(seconds / 3600);
-  if (interval >= 1) {
-    return interval + " hour(s)";
-  }
-  interval = Math.floor(seconds / 60);
-  if (interval >= 1) {
-    return interval + " minute(s)";
-  }
-  return Math.floor(seconds) + " second(s)";
-}

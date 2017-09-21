@@ -25,6 +25,7 @@
   border: solid #bbb;
 }
 
+/* Makes flag, retweet, and like icons visible when tweet is hovered over. */
 .tweet-box:hover .icons {
   color: #00a087;
 }
