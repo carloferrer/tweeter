@@ -1,6 +1,8 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.  See tweets from other people!  Let other people see your tweets!  **Tweet today!**
+Tweeter is a simple, single-page Twitter clone.
+
+See tweets from other people!  Let other people see your tweets!  **Tweet today!**
 
 
 ## Dependencies
