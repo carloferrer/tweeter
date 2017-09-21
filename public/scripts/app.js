@@ -83,15 +83,37 @@ $(document).ready(function() {
     $newTweet.find('div')
       .append('<span class="content">'+tweetData.content.text+'</span>');
     $newTweet.find('footer')
-      .append('<span class="timestamp">'+convertTime(tweetData.created_at)+'</span>');
+      .append('<span class="timestamp">Tweeted about '+timeSince(tweetData.created_at)+' ago.</span>');
 
     return $newTweet;
   }
 });
 
-function convertTime(longNum) {
-  // https://stackoverflow.com/questions/4611754/javascript-convert-seconds-to-a-date-object
-  let shortNum = new Date(1970, 0, 1);
-  shortNum.setSeconds(1 + (longNum / 1000));
-  return  shortNum;
+
+function timeSince(date) {
+//https://stackoverflow.com/questions/3177836/how-to-format-time-since-xxx-e-g-4-minutes-ago-similar-to-stack-exchange-site
+  var seconds = Math.floor((new Date() - date) / 1000);
+
+  var interval = Math.floor(seconds / 31536000);
+
+  if (interval >= 1) {
+    return interval + " year(s)";
+  }
+  interval = Math.floor(seconds / 2628000);
+  if (interval >= 1) {
+    return interval + " month(s)";
+  }
+  interval = Math.floor(seconds / 86400);
+  if (interval >= 1) {
+    return interval + " day(s)";
+  }
+  interval = Math.floor(seconds / 3600);
+  if (interval >= 1) {
+    return interval + " hour(s)";
+  }
+  interval = Math.floor(seconds / 60);
+  if (interval >= 1) {
+    return interval + " minute(s)";
+  }
+  return Math.floor(seconds) + " second(s)";
 }
