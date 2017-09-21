@@ -5,6 +5,11 @@ Tweeter is a simple, single-page Twitter clone.
 See tweets from other people!  Let other people see your tweets!  **Tweet today!**
 
 
+## Final Product
+
+!["Screenshot of Tweeter"](https://github.com/carloferrer/tweeter/blob/master/tweeter-sample.png)
+
+
 ## Dependencies
 
 - Node.js
