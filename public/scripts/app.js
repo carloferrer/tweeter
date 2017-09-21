@@ -84,7 +84,7 @@ $(document).ready(function() {
       .append('<span class="content">'+tweetData.content.text+'</span>');
     $newTweet.find('footer')
       .append('<span class="timestamp">Tweeted about '+timeSince(tweetData.created_at)+' ago.</span>')
-      .append('<div class="icons"><span class="flag">⚑</span>&nbsp&nbsp&nbsp&nbsp<span class="retweet">🔁</span>&nbsp&nbsp&nbsp&nbsp<span class="like">❤</span></div>');
+      .append('<div class="icons"><span class="flag">⚑</span>&nbsp&nbsp&nbsp<span class="retweet">🔁</span>&nbsp&nbsp&nbsp<span class="like">❤</span></div>');
 
     return $newTweet;
   }
