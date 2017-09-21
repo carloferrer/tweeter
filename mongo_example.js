@@ -20,19 +20,6 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
     // Lazy error handling...
     if (err) throw err;
 
-    // console.log(`find result: ${result}`);
-    // console.log(`type of find result: ${typeof result}`);
-
-    // Iterate on the cursor to get results one at a time...
-    // console.log('for each item yielded by the cursor:');
-    // results.each((err, item) => console.log(' ', item));
-
-    // The following "slurps" the items into an array...
-    // results.toArray((err, resultsArray) => {
-    //   if (err) throw err;
-
-      // console.log(`results.toArray: ${resultsArray}`);
-    // });
 
     console.log(`results array: ${results}`);
 
