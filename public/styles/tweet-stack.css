@@ -17,11 +17,16 @@
 
   overflow-wrap: normal;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .tweet-box:hover {
   filter: saturate(250%);
   border: solid #bbb;
+}
+
+.tweet-box:hover .icons {
+  color: #00a087;
 }
 
 .tweet-box header {
@@ -90,4 +95,15 @@
 
   width: 100%;
   border-top: solid #eee;
+}
+
+.tweet-box .icons {
+  position: absolute;
+
+  right: 10px;
+  top: 11px;
+
+  color: white;
+
+  font-size: 140%;
 }

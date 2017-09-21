@@ -32,6 +32,7 @@
 .new-tweet textarea {
   position: relative;
   width: 100%;
+  resize: none;
 }
 
 .new-tweet .counter {
