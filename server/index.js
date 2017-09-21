@@ -31,8 +31,22 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
     console.log("Example app listening on port " + PORT);
   });
 
+  // Close the connection to mongo when this node process terminates.
+  function gracefulShutdown() {
+    console.log("\nShutting down gracefully...");
+    try {
+      db.close();
+    }
+    catch (err) {
+      throw err;
+    }
+    finally {
+      console.log("Graceful shutdown successful!");
+      process.exit();
+    }
+  }
 
-  // The following is considered bad practice, and I should probably figure out where to place this db.close() without it breaking my app.
-  // db.close();
+  process.on('SIGTERM', gracefulShutdown); // listen for TERM signal .e.g. kill
+  process.on('SIGINT', gracefulShutdown);  // listen for INT signal e.g. Ctrl-C
 });
 
