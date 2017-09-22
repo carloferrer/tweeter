@@ -7,6 +7,8 @@
 
     background-color: $bg-lite;
 
+    height: 200px;
+
     margin-top: 2em;
 
     overflow-wrap: normal;
@@ -14,7 +16,7 @@
     overflow-y: hidden;
 
     &:hover {
-      @include border($edge-dark);
+      @include border($edge-med);
 
       filter: saturate(250%);
 

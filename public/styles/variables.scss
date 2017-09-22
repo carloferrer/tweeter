@@ -1,17 +1,23 @@
 $font-fam: 'Roboto Condensed', sans-serif;
 $font-dark: #244751;
 
+// background colours
 $bg-dim: #eee;
 $bg-lite: #fff;
 
+// general theme colours
 $theme-dark: #219986;
 $theme-lite: #e7fdff;
 
+// border colours
 $edge-dark: #000;
+$edge-med: #bbb;
 $edge-lite: #ddd;
 
+// tweet-box colours
 $tweet-head: #f3f3f3;
 $tweet-name: #5f7e86;
+$tweet-handle: #888;
 
 @mixin center-vertical {
   position: absolute;
@@ -20,6 +26,6 @@ $tweet-name: #5f7e86;
 }
 
 @mixin border($flavour) {
-  border-color: $flavour;
+  border: solid $flavour;
   border-radius: 5px;
 }

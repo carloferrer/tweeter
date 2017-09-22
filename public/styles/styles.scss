@@ -1,0 +1,33 @@
+@import 'variables';
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  color: $font-dark;
+  background-color: $bg-dim;
+
+  font-family: $font-fam;
+}
+
+main.container {
+  position: relative;
+  top: 60px;
+
+  background-color: $bg-lite;
+
+  margin: 0 auto;
+
+  width: 450px;
+
+  padding-top: 1em;
+  padding-bottom: 2em;
+}
+
+@import 'navigation';
+@import 'new-tweet';
+@import 'tweet-stack';
