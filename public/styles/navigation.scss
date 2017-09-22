@@ -1,0 +1,55 @@
+@import 'variables';
+
+#nav-bar {
+  position: fixed;
+
+  left: 0;
+  right: 0;
+  height: 80px;
+
+  padding-left: 2em;
+  padding-right: 2em;
+
+  background: $bg-nav;
+  color: $font-nav;
+
+  z-index: 1;
+
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .header {
+    @include center-vertical;
+
+    padding-left: 10px;
+
+    font-size: 200%;
+  }
+
+  input {
+    @include center-vertical;
+
+    right: 2em;
+
+    height: 60px;
+    width: 100px;
+
+    font: $bg-nav;
+    font-size: 125%;
+    background: $font-nav;
+
+    border: solid #000;
+    border-radius: 5px;
+
+    &:hover {
+      filter: contrast(150%);
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

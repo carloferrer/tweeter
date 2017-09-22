@@ -3,3 +3,12 @@ $font-dark: #244751;
 
 $bg-dim: #eee;
 $bg-bright: #fff;
+
+$bg-nav: #219986;
+$font-nav: #e7fdff;
+
+@mixin center-vertical {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
