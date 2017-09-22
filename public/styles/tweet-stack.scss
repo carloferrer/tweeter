@@ -1,0 +1,102 @@
+#tweet-stack {
+  margin-left: 2em;
+  margin-right: 2em;
+
+  .tweet-box {
+    @include border($edge-lite);
+
+    background-color: $bg-lite;
+
+    margin-top: 2em;
+
+    overflow-wrap: normal;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    &:hover {
+      @include border($edge-dark);
+
+      filter: saturate(250%);
+
+      .icons {
+        color: $theme-dark;
+      }
+    }
+
+    header {
+      position: relative;
+
+      background-color: $tweet-head;
+
+      height: 70px;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+
+    img {
+      position: relative;
+      margin-top: 10px;
+      margin-left: 10px;
+
+      width: 50px;
+      height: 50px;
+
+      border-radius: 5px;
+    }
+
+    h2 {
+      position: relative;
+
+      color: $tweet-name;
+
+      bottom: 75px;
+      left: 70px;
+    }
+
+    .handle {
+      position: absolute;
+
+      color: $tweet-handle;
+
+      top: 16px;
+      right: 10px;
+    }
+
+    div {
+      height: 55px;
+    }
+
+    .content {
+      position: relative;
+
+      top: 15px;
+      left: 10px;
+
+      width: 100%;
+      overflow-wrap: break-word;
+    }
+
+    footer {
+      position: relative;
+      top: 30px;
+
+      font-size: 75%;
+
+      padding-top: 1em;
+      padding-left: 10px;
+
+      border-top: solid #eee;
+    }
+
+    .icons {
+      position: absolute;
+
+      right: 10px;
+      top: 11px;
+
+      color: $bg-lite;
+
+      font-size: 140%;
+    }
+  }
+}
